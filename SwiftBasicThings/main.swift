@@ -27,7 +27,7 @@ class MyClass: NSObject {
     // methods
 }
 
-                                            /* MAIN COLLECTION TYPES */
+                                               /* MAIN COLLECTION TYPES */
 
 var arrayOfInts: Array<Int>
 var arrayOfNewInts: [Int]
@@ -37,7 +37,7 @@ var dictOfNewStrings: [String: String]
 
 var setOfInts: Set<Int>
 
-                                            /* EMPTY INITIALIZERS */
+                                                /* EMPTY INITIALIZERS */
 
 let emptyString = String()
 let emptyArrayOfInt = [Int]()
@@ -50,6 +50,10 @@ let age = 34;
 
 if case 18...35 = age where age >= 21{
     let x = case;
+}
+
+for case let i in 1...100 where i % 3 == 0 {
+    print(i);
 }
 
 let counterArray: [String] = ["One", "Two", "Three", "Four"]
