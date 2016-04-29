@@ -47,7 +47,7 @@ let emptySetOfInts = Set<Int>()
                                                 /* LOOPS RANGE FOR-IN */
 
 let age = 34;
-if case 18...35 = age {
+if case 18...35 = age where age >= 21{
     let x = case;
 }
 
