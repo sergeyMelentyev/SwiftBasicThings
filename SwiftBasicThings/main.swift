@@ -85,3 +85,17 @@ case .Pecan:
     name = "Pecan"
 }
 
+                                            /* PATTERN MATCHING WITH TUPLES*/
+let firstErrorCode = 404
+let secondErrorCode = 200
+let errorCodes = (firstErrorCode, secondErrorCode)
+switch errorCodes {
+case (404, 404):
+    print("");
+case (404, _):
+    print("");
+case (_, 404):
+    print("");
+default:
+    print("");
+}
