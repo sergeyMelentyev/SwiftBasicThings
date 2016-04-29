@@ -47,11 +47,13 @@ let emptySetOfInts = Set<Int>()
                                                 /* LOOPS RANGE FOR-IN */
 
 let age = 34;
+
 if case 18...35 = age where age >= 21{
     let x = case;
 }
 
 let counterArray: [String] = ["One", "Two", "Three", "Four"]
+
 let range = 0..<counterArray.count
 for i in range {
     let string = counterArray[i]
