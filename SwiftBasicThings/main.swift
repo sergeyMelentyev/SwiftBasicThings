@@ -48,11 +48,11 @@ let emptySetOfInts = Set<Int>()
 
 let age = 34;
 
-if case 18...35 = age where age >= 21{
-    let x = case;
+if case 18...35 = age where age >= 21 {
+    print("");
 }
 
-for case let i in 1...100 where i % 3 == 0 {
+for case let i in 18...35 where age >= 21 {
     print(i);
 }
 
