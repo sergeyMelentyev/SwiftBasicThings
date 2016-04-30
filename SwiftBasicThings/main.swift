@@ -27,7 +27,7 @@ class MyClass: NSObject {
     // methods
 }
 
-                                               /* MAIN COLLECTION TYPES */
+                                           /* MAIN COLLECTION TYPES */
 
 var arrayOfInts: Array<Int>
 var arrayOfNewInts: [Int]
@@ -37,23 +37,23 @@ var dictOfNewStrings: [String: String]
 
 var setOfInts: Set<Int>
 
-                                                /* EMPTY INITIALIZERS */
+                                            /* EMPTY INITIALIZERS */
 
 let emptyString = String()
 let emptyArrayOfInt = [Int]()
 let emptyDictOfStr = [String: String]()
 let emptySetOfInts = Set<Int>()
 
-                                                /* LOOPS RANGE FOR-IN */
+                                        /* IF LOGIC PLUS LOOPS RANGE FOR-IN */
 
-let age = 34;
+let age = 30;
 
 if case 18...35 = age where age >= 21 {
-    print("");
+    print("Print once if statement is true plus where condition")
 }
 
-for case let i in 18...35 where age >= 21 {
-    print(i);
+for case let i in 35...35 where age >= 21 {
+    print("Print i-times if true with let = \(i) plus where condition");
 }
 
 let counterArray: [String] = ["One", "Two", "Three", "Four"]
@@ -85,8 +85,10 @@ enum PieType {
     case Cherry
     case Pecan
 }
+
 let favoritePie = PieType.Apple
 let name: String
+
 switch favoritePie {
 case .Apple:
     name = "Apple"
@@ -96,10 +98,11 @@ case .Pecan:
     name = "Pecan"
 }
 
-                                            /* PATTERN MATCHING WITH TUPLES*/
+                                        /* PATTERN MATCHING WITH TUPLES */
 let firstErrorCode = 404
 let secondErrorCode = 200
 let errorCodes = (firstErrorCode, secondErrorCode)
+
 switch errorCodes {
 case (404, 404):
     print("");
@@ -110,3 +113,26 @@ case (_, 404):
 default:
     print("");
 }
+
+                                                /* STRINGS */
+
+let anyWord = "Hello, Swift!"
+let fromStart = anyWord.startIndex
+let toPosition = 4
+let end = fromStart.advancedBy(toPosition)
+let fifthChar = anyWord[end]
+print("The fifth char is \(fifthChar)")
+let rangeOfChars = fromStart...end
+let firstFive = anyWord[rangeOfChars]
+print("First five chars are \(firstFive)")
+
+let fourthChar = anyWord[anyWord.startIndex.advancedBy(3)]
+let firstFour = anyWord[anyWord.startIndex...anyWord.startIndex.advancedBy(3)]
+
+
+
+
+
+
+
+
