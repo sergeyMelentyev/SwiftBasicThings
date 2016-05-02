@@ -130,6 +130,65 @@ let fourthChar = anyWord[anyWord.startIndex.advancedBy(3)]
 let firstFour = anyWord[anyWord.startIndex...anyWord.startIndex.advancedBy(3)]
 
 
+                                                /* FUNCTIONS */
+
+func devisionDescription(forNumerator num: Double, andDenominator den: Double) {
+    // forNumerator, andDenominator are external parameter names
+    // num, den are arguments
+}
+devisionDescription(forNumerator: 2, andDenominator: 4)
+
+func variadicParameters(names: String...){
+    // arguments are made avaible as an array
+    for name in names {
+        print("Hello \(name)")
+    }
+}
+variadicParameters("Sergey", "Olga", "Mihail")
+
+var error = "The request failed:"
+func appendErrorCode(errorCode code: Int, inout toErrorString errorString: String) {
+    // func will take external variable as an argument and will append some info
+    if code == 400 {
+        errorString += " bad request."
+    }
+}
+appendErrorCode(errorCode: 400, toErrorString: &error)
+
+func sortEvenOdd(numbers: [Int]) -> (enens: [Int], odds: [Int]) {
+    // function will return multiple values
+    var evens = [Int]()
+    var odds = [Int]()
+    for number in numbers {
+        if number % 2 == 0 {
+            evens.append(number)
+        } else {
+            odds.append(number)
+        }
+    }
+    return (evens, odds)
+}
+// assign function type to the variable and pass as an argument to the other functions
+let sortEvenOddFunction: ([Int] -> ([Int],[Int])) = sortEvenOdd
+
+func greetByMiddleName(name: (first: String, middle: String?, last: String)) {
+    // use guard statements for early exit if condition wrong
+    guard let middleName = name.middle else {
+        print("Hello there!")
+        return
+    }
+    print("Hello \(middleName)")
+}
+greetByMiddleName(("Sergey", nil, "Melentyev"))
+
+
+                                                /* CLOSURE */
+
+
+
+
+
+
 
 
 
