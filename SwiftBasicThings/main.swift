@@ -126,7 +126,7 @@ func variadicParameters(names: String...){
         print("Hello \(name)")
     }
 }
-variadicParameters("Sergey", "Olga", "Mihail")
+variadicParameters("Sergey", "Olga", "Michail")
 
 // func will take external variable as an argument and will append some info
 var error = "The request failed:"
@@ -278,6 +278,8 @@ print(myLanguage.rawValue)
 enum Lightbulb {
     case On
     case Off
+    
+    // Declare an instance method, it is called on a specific instance of Lightbulb
     func surfaceTemperature(ambient: Double) -> Double {
         switch self {
         case .On:
@@ -286,6 +288,8 @@ enum Lightbulb {
             return ambient
         }
     }
+    
+    // Declare a mutating method, a function changes emums properties
     mutating func toggle() {
         switch self {
         case .On:
@@ -302,20 +306,20 @@ var bulbTemperature = bulb.surfaceTemperature(ambientTemperature)
 // Associated values
 enum ShapeDimensions {
     case Point
-    case Square(Double)
+    case Square(side: Double)
     case Rectangle(width: Double, height: Double)
     func area() -> Double {
         switch self {
         case .Point:
             return 0
-        case let .Square(side):
+        case let .Square(side: side):
             return side * side
         case let .Rectangle(width: w, height: h):
             return w * h
         }
     }
 }
-var squareShape = ShapeDimensions.Square(10.0)
+var squareShape = ShapeDimensions.Square(side: 10.0)
 var rectangleShape = ShapeDimensions.Rectangle(width: 5.0, height: 10.0)
 var pointShape = ShapeDimensions.Point
 print("Area of square is \(squareShape.area()), of rect is \(rectangleShape.area())")
@@ -329,6 +333,25 @@ enum FamilyTree {
 let sergeyAncestors = FamilyTree.TwoKnownParents(fatherName: "Aleksander", fatherAncestors: .OneKnownParent(name: "Sergey", ancestors: .NoKnownParents), motherName: "Alla", motherAncestors: .TwoKnownParents(fatherName: "Anatoliy", fatherAncestors: .NoKnownParents, motherName: "Marfa", motherAncestors: .NoKnownParents))
 
 
+                                            /* STRUCT TYPE VS CLASSES */
+
+// Create a new instance of a struct using default initializer
+var myTown = Town()
+myTown.printTownDescription()
+myTown.changePopulation(byAmount: 200)
+myTown.printTownDescription()
+
+// Create a new instance of a class using default initializer
+let myMonster = Monster()
+myMonster.town = myTown
+myMonster.terrorizeTown()
+
+// Create a new instance of a class using default initializer
+let myZombie = Zombie()
+myZombie.changeName("Fred the Zombie", walksWithLimp: false)
+myZombie.town = myTown
+myZombie.terrorizeTown()
+myZombie.town?.printTownDescription()
 
 
 
