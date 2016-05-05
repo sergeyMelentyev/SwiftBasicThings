@@ -14,6 +14,18 @@ class Monster {
     var town: Town?
     var name = "Monster"
     
+    // Declare computed property with custom setter and getter
+    var victimPool: Int {
+        get {
+            // use nil coalescing operator to check if the town is init or set zero
+            return town?.population ?? 0
+        }
+        set(newVictimPool) {
+            // use optional chaining to ensure that town is init
+            town?.population = newVictimPool
+        }
+    }
+    
     // Declare an instance method, it is called on a specific instance of Monster
     func terrorizeTown() {
         if town != nil {

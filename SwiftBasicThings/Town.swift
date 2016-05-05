@@ -14,6 +14,29 @@ struct Town {
     var population = 5422
     var numberOfStopLights = 4
     
+    // Declare an immutable property
+    let region = "South"
+    
+    enum Size {
+        case Small
+        case Medium
+        case Large
+    }
+    
+    // Read only computed property with custom getter
+    var townSize: Size {
+        get {
+            switch self.population {
+            case 0...10000:
+                return Size.Small
+            case 10001...1000000:
+                return Size.Medium
+            default:
+                return Size.Large
+            }
+        }
+    }
+    
     // Declare an instance method, it is called on a specific instance of Town
     func printTownDescription() {
         print("Town population \(population) and number of lights \(numberOfStopLights)")

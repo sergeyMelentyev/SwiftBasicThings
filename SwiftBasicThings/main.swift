@@ -351,6 +351,7 @@ let myZombie = Zombie()
 myZombie.changeName("Fred the Zombie", walksWithLimp: false)
 myZombie.town = myTown
 myZombie.terrorizeTown()
+// use optional chaining to ensure that town is init
 myZombie.town?.printTownDescription()
 
 

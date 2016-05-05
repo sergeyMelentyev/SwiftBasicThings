@@ -15,6 +15,7 @@ class Zombie: Monster {
     
     // reDeclare an instance method, inherited from super class
     override func terrorizeTown() {
+        // use optional chaining to ensure that town is init
         town?.changePopulation(byAmount: -300)
         // Call method from super class
         super.terrorizeTown()
