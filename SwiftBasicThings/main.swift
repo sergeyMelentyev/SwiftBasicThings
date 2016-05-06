@@ -335,8 +335,8 @@ let sergeyAncestors = FamilyTree.TwoKnownParents(fatherName: "Aleksander", fathe
 
                                             /* STRUCT TYPE VS CLASSES */
 
-// Create a new instance of a struct using default initializer
-var myTown = Town()
+// Create a new instance of a struct using customr initializer
+var myTown = Town(region: "South", population: 10000, stopLights: 10)
 myTown.printTownDescription()
 myTown.changePopulation(byAmount: 200)
 myTown.printTownDescription()
@@ -353,8 +353,6 @@ myZombie.town = myTown
 myZombie.terrorizeTown()
 // use optional chaining to ensure that town is init
 myZombie.town?.printTownDescription()
-
-
 
 
 

@@ -10,12 +10,22 @@ import Foundation
 
 struct Town {
     
-    // Declare a mutable properties
-    var population = 5422
-    var numberOfStopLights = 4
+    // Static type property will be inherited but cannot be overridden by a subclass
+    static let regionOld = "South"
     
-    // Declare an immutable property
-    let region = "South"
+    // Type method, can see only type level properties and methods
+    static func anyGivenName() -> String {
+        return "anyReturnInformationHere"
+    }
+    
+    // Computed instance property with observer
+    var population: Int {
+        didSet(oldPopulation) {
+            print("The population has changed from \(oldPopulation) to \(population)")
+        }
+    }
+    var numberOfStopLights: Int
+    let region: String
     
     enum Size {
         case Small
@@ -23,7 +33,7 @@ struct Town {
         case Large
     }
     
-    // Read only computed property with custom getter
+    // Computed instance property with custom getter
     var townSize: Size {
         get {
             switch self.population {
@@ -37,7 +47,7 @@ struct Town {
         }
     }
     
-    // Declare an instance method, it is called on a specific instance of Town
+    // Instance method, it is called on a specific instance of Town
     func printTownDescription() {
         print("Town population \(population) and number of lights \(numberOfStopLights)")
     }
@@ -46,11 +56,22 @@ struct Town {
     mutating func changePopulation(byAmount amount: Int) {
         population += amount
     }
-    
-    // Declare a type method, a function work with type itself
-    // Static func can see only type level properties and another methods
-    static func anyGivenName() -> String {
-        return "anyReturnInformationHere"
-    }
 
+    // Custom initializer
+    init(region: String, population: Int, stopLights: Int) {
+        // Use self key word if an instance property name is the same as init argument name
+        self.region = region
+        self.population = population
+        numberOfStopLights = stopLights
+    }
+    
 }
+
+
+
+
+
+
+
+
+

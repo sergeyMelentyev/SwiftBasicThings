@@ -10,7 +10,15 @@ import Foundation
 
 class Zombie: Monster {
     
-    // Declare a mutable properties
+    // Computed type property
+    override class var spookyNoise: String {
+        return "Brains..."
+    }
+    
+    // Default visibility (internal) for the getter and private for the setter
+    private(set) var isFallingApart = false
+    
+    // Stored instance property
     var walksWithLimp = true
     
     // reDeclare an instance method, inherited from super class
@@ -24,12 +32,6 @@ class Zombie: Monster {
     func changeName(name: String, walksWithLimp: Bool) {
         self.name = name
         self.walksWithLimp = walksWithLimp
-    }
-    
-    // Declare a type method, a function work with type itself
-    // Class func can see only type level properties and another methods
-    class func anyNewTypeMethodName() -> String {
-        return "anyReturnInformationHere"
     }
 
 }
