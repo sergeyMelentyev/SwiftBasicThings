@@ -13,7 +13,7 @@ struct Town {
     // Static type property will be inherited but cannot be overridden by a subclass
     static let regionOld = "South"
     
-    // Type method, can see only type level properties and methods
+    // Static type method, can see only type level properties and methods
     static func anyGivenName() -> String {
         return "anyReturnInformationHere"
     }
@@ -52,17 +52,25 @@ struct Town {
         print("Town population \(population) and number of lights \(numberOfStopLights)")
     }
     
-    // Declare a mutating method, a function changes structs properties
+    // Declare a mutating method, a function changes struct property
     mutating func changePopulation(byAmount amount: Int) {
         population += amount
     }
 
-    // Custom initializer
-    init(region: String, population: Int, stopLights: Int) {
+    // Custom failabe initializer
+    init?(region: String, population: Int, stopLights: Int) {
+        if population <= 0 {
+            return nil
+        }
         // Use self key word if an instance property name is the same as init argument name
         self.region = region
         self.population = population
         numberOfStopLights = stopLights
+    }
+    
+    // Custom failabe initializer delegation
+    init?(population: Int, stopLights: Int) {
+        self.init(region: "N/A", population: population, stopLights: stopLights)
     }
     
 }

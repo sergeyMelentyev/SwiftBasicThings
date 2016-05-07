@@ -20,7 +20,7 @@ class Monster {
     
     // Stored instance property
     var town: Town?
-    var name = "Monster"
+    var name: String
     
     // Computed instance property with custom setter and getter
     var victimPool: Int {
@@ -43,4 +43,18 @@ class Monster {
         }
     }
     
+    // Required designated initializer that must be implemented by a subclass
+    required init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
+    }
+    
 }
+
+
+
+
+
+
+
+

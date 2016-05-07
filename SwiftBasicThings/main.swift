@@ -11,6 +11,7 @@ import Foundation
                                             /* SWIFT BUILDING BLOCKS */
 
 struct MyStruct {
+    /* VALUE TYPE */
     /* numbers, bool, text, collections */
     // properties
     // init
@@ -22,6 +23,7 @@ enum MyEnum {
     // methods
 }
 class MyClass: NSObject {
+    /* REFERENCE TYPE */
     // properties
     // init
     // methods
@@ -337,24 +339,18 @@ let sergeyAncestors = FamilyTree.TwoKnownParents(fatherName: "Aleksander", fathe
 
 // Create a new instance of a struct using customr initializer
 var myTown = Town(region: "South", population: 10000, stopLights: 10)
-myTown.printTownDescription()
-myTown.changePopulation(byAmount: 200)
-myTown.printTownDescription()
+myTown?.printTownDescription()
 
 // Create a new instance of a class using default initializer
-let myMonster = Monster()
-myMonster.town = myTown
+let myMonster = Monster(town: myTown, monsterName: "Monster")
 myMonster.terrorizeTown()
 
 // Create a new instance of a class using default initializer
-let myZombie = Zombie()
+let myZombie = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Zombie")
 myZombie.changeName("Fred the Zombie", walksWithLimp: false)
-myZombie.town = myTown
 myZombie.terrorizeTown()
 // use optional chaining to ensure that town is init
 myZombie.town?.printTownDescription()
-
-
 
 
 
