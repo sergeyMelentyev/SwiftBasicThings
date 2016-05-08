@@ -12,7 +12,7 @@ import Foundation
 
 struct MyStruct {
     /* VALUE TYPE */
-    /* numbers, bool, text, collections */
+    /* number, bool, text, collection */
     // properties
     // init
     // methods
@@ -260,7 +260,7 @@ enum TextAlignment {
     case Center
 }
 
-// Create a new instance of your custom type
+// Create a new instance of a custom type
 var alignment: TextAlignment = TextAlignment.Center
 
 // Next time short hand notation can be used

@@ -62,7 +62,7 @@ struct Town {
         if population <= 0 {
             return nil
         }
-        // Use self key word if an instance property name is the same as init argument name
+        // Use self if an instance property name is the same as init argument name
         self.region = region
         self.population = population
         numberOfStopLights = stopLights
