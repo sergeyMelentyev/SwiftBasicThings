@@ -75,13 +75,17 @@ enum PieType {
     case Pecan
 }
 let favoritePie = PieType.Apple
+
 let name: String
+
 switch favoritePie {
 case .Apple:
-    name = "Apple"
+    name = "Apple2"
 case .Cherry:
     name = "Chery"
 case .Pecan:
     name = "Pecan"
 }
+
+print(name)
 
